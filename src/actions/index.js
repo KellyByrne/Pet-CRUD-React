@@ -32,8 +32,8 @@ export const editPet = (id, formValues) => async (dispatch) => {
 };
 
 export const deletePet = (id) => async (dispatch) => {
-    const response = await pets.delete(`/pets/${id}/delete`);
-    dispatch({type: DELETE_PET, payload:response});
+    await pets.delete(`/pets/${id}/delete`);
+    dispatch({type: DELETE_PET, payload:id});
     history.push('/');
 };
 

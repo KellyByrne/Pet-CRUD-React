@@ -26,6 +26,7 @@ class ShowPets extends React.Component {
         return (
             <div className="row">
                 {this.renderList()}
+                <div><Link to="/pets/new" className="btn btn-success">Create Pet</Link></div>
             </div>
         );
     }

@@ -22,17 +22,17 @@ export const createPet = (formValues) => async (dispatch) => {
 
 export const fetchPet = (id) => async (dispatch) => {
     const response = await pets.get(`/pets/${id}`);
-    dispatch({type: FETCH_PET, payload: response});
+    dispatch({type: FETCH_PET, payload: response.data});
 };
 
 export const editPet = (id, formValues) => async (dispatch) => {
-    const response = await pets.post(`/pets/${id}`, formValues);
+    const response = await pets.post(`/pets/${id}/edit`, formValues);
     dispatch({type: EDIT_PET, payload: response});
     history.push('/');
 };
 
 export const deletePet = (id) => async (dispatch) => {
-    const response = await pets.delete(`/pets/${id}`);
+    const response = await pets.delete(`/pets/${id}/delete`);
     dispatch({type: DELETE_PET, payload:response});
     history.push('/');
 };
